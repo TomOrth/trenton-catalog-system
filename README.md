@@ -15,7 +15,7 @@ We will put steps to setup the project as it is developed
 
 # Database Design
 
-Once the database design is finished in Stage III, we will describe and link it here.
+Please see [this document](https://github.com/TCNJ-degoodj/stage-iii-group-1/blob/main/docs/Stage%20III%20-%20Database%20Model.pdf) for our database design that has an EER diagram and relational schema.
 
 # Contributing 
 
