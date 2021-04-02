@@ -15,7 +15,9 @@ We will put steps to setup the project as it is developed
 
 # Database Design
 
-Please see [this document](https://github.com/TCNJ-degoodj/stage-iii-group-1/blob/main/docs/Stage%20III%20-%20Database%20Model.pdf) for our database design that has an EER diagram and relational schema.
+Please see [this document](https://github.com/TCNJ-degoodj/stage-iv-group-1/blob/main/docs/Database%20Model%20Updated%20-%20Stage%20IV.pdf) for our database design that has an EER diagram and relational schema.
+
+Please see [this document](https://github.com/TCNJ-degoodj/stage-iv-group-1/blob/main/docs/Stage%20IV.pdf) to see our design (Normalization, Views and a set of queries for our transactions).
 
 # Contributing 
 
