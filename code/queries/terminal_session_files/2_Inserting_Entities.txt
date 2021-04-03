@@ -1,0 +1,23 @@
+Script started on 2021-04-03 00:01:42-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="109" LINES="23"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_users.sql 
+INSERT 0 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_users.sql [1P[1P[1P[1P[1@t[1@r[1@a[1@n[C[1@s[1@c[1@i[1@p[1@t[C[1@s[1P
+psql: error: insert_transcipts.sql: No such file or directory
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_transcipts.sql [1@r
+psql: error: insert_transcripts.sql: No such file or directory
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_transcripts.sql [1P
+INSERT 0 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_transcript.sql [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@p[1@a[1@r[1@t[1@i[1@c[1@i[1@p[1@a[1@n[1@t[1@s
+psql:insert_participants.sql:1: ERROR:  invalid input syntax for type integer: "Joel Millner"
+LINE 1: INSERT INTO participants VALUES ('Joel Millner');
+                                         ^
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_participants.sql 
+INSERT 0 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ exit[K[K[K[Kpsql -f insert_participants.sql [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@e[1P[1@k[1@e[1@y[1@w[1@o[1@r[1@d[1@s
+INSERT 0 2
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_keywords.sql [1P[1P[1P[1P[1P[1P[1P[1P[1@l[1@o[1@c[1@a[1@t[1@i[1@o[1@n[1@s
+INSERT 0 2
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ exit
+exit
+
+Script done on 2021-04-03 00:03:50-04:00 [COMMAND_EXIT_CODE="0"]

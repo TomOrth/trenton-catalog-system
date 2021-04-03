@@ -1,0 +1,11 @@
+Script started on 2021-04-03 00:33:58-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="168" LINES="32"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/filtering[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/filtering[00m$ psql -f filter_user.sql 
+ user_id 
+---------
+       2
+(1 row)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/filtering[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/filtering[00m$ exit
+exit
+
+Script done on 2021-04-03 00:34:07-04:00 [COMMAND_EXIT_CODE="0"]

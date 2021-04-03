@@ -1,0 +1,1 @@
+DELETE FROM mentions where transcript_id = 2;

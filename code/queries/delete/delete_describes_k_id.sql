@@ -1,0 +1,1 @@
+DELETE FROM describes where k_id = 1;

@@ -1,0 +1,1 @@
+SELECT * FROM full_transcript_view WHERE text_content ILIKE '%huge%';

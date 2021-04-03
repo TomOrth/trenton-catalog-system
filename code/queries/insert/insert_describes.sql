@@ -1,0 +1,1 @@
+INSERT INTO describes VALUES (1,2), (2,2);

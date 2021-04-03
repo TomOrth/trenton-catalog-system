@@ -1,0 +1,1 @@
+INSERT INTO locations(street_name) VALUES ('Union Street'), ('South Broad Street');

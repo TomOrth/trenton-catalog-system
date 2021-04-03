@@ -1,0 +1,1 @@
+DELETE FROM participates where p_id = 1;

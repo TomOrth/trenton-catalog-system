@@ -1,0 +1,1 @@
+INSERT INTO transcripts(title, summary, audio_file_path, text_file_path, text_content) VALUES ('Joel Millner Transcript', 'This trasncript is about Joel Millner and recalling the life of his father', 'joel.mp3', 'joel.pdf', 'The content would go here. Since the transcripts are huge, this example text is used instead for demonstration purposes.');

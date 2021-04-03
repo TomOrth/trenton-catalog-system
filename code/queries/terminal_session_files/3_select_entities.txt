@@ -1,0 +1,39 @@
+Script started on 2021-04-03 00:08:14-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="109" LINES="23"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ s[Kpsql -f select_key[K[K[Kusers.sql
+ user_id |     email     | password_hash | lflag 
+---------+---------------+---------------+-------
+       2 | test@tcnj.edu | some_hash     |     0
+(1 row)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_users.sql[C[1Ps.sql[1Ps.sql[1P.sql[1Ps.sqlts.sqlrs.sqlas.sqlns.sql[Cs.sqlcs.sqlrs.sqlis.sqlps.sqlts.sql
+psql: error: select_transcripts.sql: No such file or directory
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_transcripts.sql[1P.sql
+[?1049h[22;0;0t[?1h= transcript_id |          title          |                                  summary                                    | audio_file_path | text_file_path |                                                       text_cont ent                                                       
+---------------+-------------------------+------------------------------------------------------------------- ---------+-----------------+----------------+---------------------------------------------------------------- ----------------------------------------------------------
+             2 | Joel Millner Transcript | This trasncript is about Joel Millner and recalling the life of hi s father | joel.mp3        | joel.pdf       | The content would go here. Since the transcripts are huge, this  example text is used instead for demonstration purposes.
+(1 row)
+
+[7m(END)[27m[K[K[?1l>[?1049l[23;0;0t]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_transcript.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sqlp.sqla.sqlr.sqlt.sqli.sqlc.sqli.sqlp.sqla.sqln.sqlt.sqls.sql
+ p_id |     name     
+------+--------------
+    1 | Joel Millner
+(1 row)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_participants.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sqll.sqlo.sqlc.sqla.sqlt.sqli.sqlo.sqln.sqls.sql
+ location_id |    street_name     
+-------------+--------------------
+           1 | Union Street
+           2 | South Broad Street
+(2 rows)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_locations.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sql[1P.sqlk.sqle.sqly.sqlw.sqlo.sqlr.sqld.sqls.sql
+ k_id |      keyword      
+------+-------------------
+    1 | millner
+    2 | indistinguishable
+(2 rows)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ exit
+exit
+
+Script done on 2021-04-03 00:09:29-04:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,7 @@
+Script started on 2021-04-03 01:02:22-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="168" LINES="25"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/update[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/update[00m$ exitpsql -f filter_keyword.sqllocation.sql[1Pkeyword.sqlexit[K[Kpsql -f update_transcript.sql
+UPDATE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/update[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/update[00m$ ext[Kit
+exit
+
+Script done on 2021-04-03 01:02:37-04:00 [COMMAND_EXIT_CODE="0"]

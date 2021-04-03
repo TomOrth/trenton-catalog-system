@@ -1,0 +1,1 @@
+INSERT INTO mentions VALUES (1,2), (2,2);

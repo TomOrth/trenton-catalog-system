@@ -1,0 +1,1 @@
+DELETE FROM participants WHERE p_id = 1;

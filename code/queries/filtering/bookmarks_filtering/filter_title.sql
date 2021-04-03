@@ -1,0 +1,1 @@
+SELECT * FROM user_transcript_view WHERE user_id=2 AND title ILIKE '%joel%';

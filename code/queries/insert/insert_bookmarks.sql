@@ -1,0 +1,1 @@
+INSERT INTO bookmarks VALUES (2,2);

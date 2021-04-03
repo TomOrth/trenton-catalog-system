@@ -1,0 +1,13 @@
+Script started on 2021-04-03 01:17:02-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="168" LINES="25"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ de[K[Kpsql -f delete_keyword.sql 
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_keyword.sql [1P[1P[1P[1P[1P[1P[1P[1@l[1@o[1@c[1@a[1@t[1@i[1@o[1@n
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_location.sql [1P[1P[1P[1P[1P[1P[1P[1P[1@p[1@a[1@r[1@t[1@i[1@c[1@i[1@p[1@a[1@n[1@t
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_participant.sql [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@t[1@r[1@a[1@n[1@s[1@c[1@r[1@i[1@p[1@t
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ exit
+exit
+
+Script done on 2021-04-03 01:17:42-04:00 [COMMAND_EXIT_CODE="0"]

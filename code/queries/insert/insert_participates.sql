@@ -1,0 +1,1 @@
+INSERT INTO participates VALUES (1,2);

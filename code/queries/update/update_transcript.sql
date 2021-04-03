@@ -1,0 +1,1 @@
+UPDATE transcripts SET title='title', text_content='lorem ipsum', summary='summary' WHERE transcript_id=2;

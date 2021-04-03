@@ -1,0 +1,1 @@
+DELETE FROM transcripts WHERE transcript_id = 2;

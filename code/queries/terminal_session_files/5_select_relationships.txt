@@ -1,0 +1,32 @@
+Script started on 2021-04-03 00:20:27-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="109" LINES="23"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_bookmarks.sql 
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_bookmarks.sql 
+ user_id | transcript_id 
+---------+---------------
+       2 |             2
+(1 row)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_bookmarks.sql [1P[1P[1P[1P[1P[1P[1P[1P[1@m[1@e[1@n[1@t[1@i[1@o[1@n[C[1@s[1P
+ location_id | transcript_id 
+-------------+---------------
+           1 |             2
+           2 |             2
+(2 rows)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_mentions.sql [1P[1P[1P[1P[1P[1P[1P[1@p[1@a[1@r[1@t[1@i[1@c[1@i[1@p[1@a[1@t[1@e[C[1@s[1P
+ p_id | transcript_id 
+------+---------------
+    1 |             2
+(1 row)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ psql -f select_participates.sql [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@d[1@e[C[1@s[1@c[1@r[1@i[1@b[1@e
+ k_id | transcript_id 
+------+---------------
+    1 |             2
+    2 |             2
+(2 rows)
+
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/select[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/select[00m$ exit
+exit
+
+Script done on 2021-04-03 00:21:28-04:00 [COMMAND_EXIT_CODE="0"]

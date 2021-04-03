@@ -1,0 +1,21 @@
+Script started on 2021-04-03 01:24:25-04:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="168" LINES="25"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/copy[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/copy[00m$ copy[K[K[K[Ksudo -u postgres psql lion
+[sudo] password for lion: 
+psql (12.6 (Ubuntu 12.6-0ubuntu0.20.04.1))
+Type "help" for help.
+
+lion=# \i copy_keywords.sql
+COPY 2
+lion=# \i copy_keywords.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sqlls.sqlos.sqlcs.sqlas.sqlts.sqlis.sqlos.sqlns.sql
+COPY 2
+lion=# \i copy_locations.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sqlps.sqlas.sqlrs.sqlts.sqlis.sqlcs.sqlis.sqlps.sqlas.sqlns.sqlts.sql[Cs.sql[1P.sql
+COPY 1
+lion=# \i copy_participants.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sql[1Ps.sqlts.sqlrs.sqlas.sqlns.sql[Cs.sqlcs.sqlrs.sqlis.sqlps.sqlts.sql
+copy_transcripts.sql: No such file or directory
+lion=# \i copy_transcripts.sql[1P.sql
+COPY 1
+lion=# exit
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/copy[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/copy[00m$ exit
+exit
+
+Script done on 2021-04-03 01:25:17-04:00 [COMMAND_EXIT_CODE="0"]

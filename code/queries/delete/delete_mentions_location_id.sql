@@ -1,0 +1,1 @@
+DELETE FROM mentions where location_id = 1;

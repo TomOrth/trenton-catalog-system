@@ -1,0 +1,1 @@
+DELETE FROM keywords WHERE k_id = 1;

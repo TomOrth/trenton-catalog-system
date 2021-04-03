@@ -1,0 +1,17 @@
+Script started on 2021-04-03 01:11:35-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="168" LINES="25"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_bookmarks_transcript_id.sql 
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_bookmarks_transcript_id.sql [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@d[1@e[1@s[1@c[6@ribes_[1@s[1P[1@l[1P
+delete_describes_k_id.sql           delete_describes_transcript_id.sql  
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_describes_.sql [1@k[7@_id.sql[1P[1P[1P[1P
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_describes_k_id.sql [1P[1@t[1@r[1@a[1@s[1P[1@n[1@s[1@c[1@r[1@i[1@p[1@t
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_describes_transcript_id.sql [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@m[1@e[1@n[1@t[1@i[1@n[1P[1@o[1@n[1@s[1@_[1@t[1@r[1@a[1@n[1@s[1@c[1@r[1@i[1@p[1@t[1@_[1@i[1@d
+DELETE 2
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ psql -f delete_mentions_transcript_id.sql [C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@p[1@a[1@r[1@t[1@i[1@c[1@i[1@p[1@a[1@t[1@e[2@s_[1@t[16@ranscript_id.sql[1P[1P[1P[1P[1P[1@d
+DELETE 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/delete[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/delete[00m$ exit
+exit
+
+Script done on 2021-04-03 01:13:31-04:00 [COMMAND_EXIT_CODE="0"]

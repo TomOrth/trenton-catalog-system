@@ -1,0 +1,1 @@
+DELETE FROM describes where transcript_id = 2;

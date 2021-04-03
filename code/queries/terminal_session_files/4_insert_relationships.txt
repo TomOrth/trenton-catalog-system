@@ -1,0 +1,17 @@
+Script started on 2021-04-03 00:15:40-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="109" LINES="23"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_bookmarks.sql 
+INSERT 0 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_bookmarks.sql [C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@d[1@e[1@s[1@r[1@i[1P[1P[1@c[1@r[1@i[1@b[1@e[1@s
+INSERT 0 2
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_describes.sql [1P[1P[1P[1P[1P[1P[1P[1P[1P[1@m[1@e[1@n[1@t[1@i[1P[1@i[1@o[1@n[1@s
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_mentions.sql 
+psql:insert_mentions.sql:1: ERROR:  duplicate key value violates unique constraint "locations_pkey"
+DETAIL:  Key (location_id)=(1) already exists.
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_mentions.sql 
+INSERT 0 2
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ psql -f insert_mentions.sql [1P[1P[1P[1P[1P[1P[1P[1P[1@p[1@a[1@r[1@t[1@i[1@c[1@i[1@p[1@a[1@t[1@e[1@s
+INSERT 0 1
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/insert[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/insert[00m$ exit
+exit
+
+Script done on 2021-04-03 00:17:28-04:00 [COMMAND_EXIT_CODE="0"]

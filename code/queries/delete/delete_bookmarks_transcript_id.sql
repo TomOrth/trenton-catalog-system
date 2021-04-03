@@ -1,0 +1,1 @@
+DELETE FROM bookmarks where transcript_id = 2;

@@ -1,0 +1,23 @@
+Script started on 2021-04-03 00:35:11-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="168" LINES="32"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[00m$ exitpsql -f filter_user.sql exit[Kpsql -f select_describes.sql [3@participat[C[C[C[C[C[C[C[3Pdescrib[C[C[C[C[C[C[Cexit[Kpsql -f filter_user.sql exit[K[Kpsql filter_[K[K[K[K[K[K[K[K -f filter_e[Ktitle.sql 
+[?1049h[22;0;0t[?1h= user_id |     email     | password_hash | lflag | transcript_id |          title          |                                  summary                                    | audio_file_path | text_file_path |                                                       text_content                                                       
+---------+---------------+---------------+-------+---------------+-------------------------+---------------------------------------------------------------------------- +-----------------+----------------+--------------------------------------------------------------------------------------------------------------------------
+       2 | test@tcnj.edu | some_hash     |     0 |             2 | Joel Millner Transcript | This trasncript is about Joel Millner and recalling the life of his father  | joel.mp3        | joel.pdf       | The content would go here. Since the transcripts are huge, this example text is used instead for demonstration purposes.
+(1 row)
+
+[7m(END)[27m[K[K[?1l>[?1049l[23;0;0t]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[00m$ psql -f filter_title.sql [1P[1P[1P[1P[1P[1@t[1@e[1@x[1@t
+[?1049h[22;0;0t[?1h= user_id |     email     | password_hash | lflag | transcript_id |          title          |                                  summary                                    | audio_file_path | text_file_path |                                                       text_content                                                       
+---------+---------------+---------------+-------+---------------+-------------------------+---------------------------------------------------------------------------- +-----------------+----------------+--------------------------------------------------------------------------------------------------------------------------
+       2 | test@tcnj.edu | some_hash     |     0 |             2 | Joel Millner Transcript | This trasncript is about Joel Millner and recalling the life of his father  | joel.mp3        | joel.pdf       | The content would go here. Since the transcripts are huge, this example text is used instead for demonstration purposes.
+(1 row)
+
+[7m(END)[27m[K[K[?1l>[?1049l[23;0;0t]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[00m$ psql -f filter_text.sql [C[1P[1P[1P[1P[1@s[1@u[1@m[1@m[1@a[1@r[1@y
+[?1049h[22;0;0t[?1h= user_id |     email     | password_hash | lflag | transcript_id |          title          |                                  summary                                    | audio_file_path | text_file_path |                                                       text_content                                                       
+---------+---------------+---------------+-------+---------------+-------------------------+---------------------------------------------------------------------------- +-----------------+----------------+--------------------------------------------------------------------------------------------------------------------------
+       2 | test@tcnj.edu | some_hash     |     0 |             2 | Joel Millner Transcript | This trasncript is about Joel Millner and recalling the life of his father  | joel.mp3        | joel.pdf       | The content would go here. Since the transcripts are huge, this example text is used instead for demonstration purposes.
+(1 row)
+
+[7m(END)[27m[K[K[?1l>[?1049l[23;0;0t]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries/filtering/bookmarks_filtering[00m$ exit
+exit
+
+Script done on 2021-04-03 00:35:50-04:00 [COMMAND_EXIT_CODE="0"]
