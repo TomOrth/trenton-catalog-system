@@ -1,1 +1,4 @@
+-- Inserts a transcript into the transcripts relation
+-- Values hardcoded for demonstrative purposes. Please update to match the values you want inserted
+-- Query created as a group. File created by Thomas Orth. Reviewed by Matthew Van Soelen and Justin Pabon
 INSERT INTO transcripts(title, summary, audio_file_path, text_file_path, text_content) VALUES ('Joel Millner Transcript', 'This trasncript is about Joel Millner and recalling the life of his father', 'joel.mp3', 'joel.pdf', 'The content would go here. Since the transcripts are huge, this example text is used instead for demonstration purposes.');

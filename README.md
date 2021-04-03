@@ -19,6 +19,14 @@ Please see [this document](https://github.com/TCNJ-degoodj/stage-iv-group-1/blob
 
 Please see [this document](https://github.com/TCNJ-degoodj/stage-iv-group-1/blob/main/docs/Stage%20IV.pdf) to see our design (Normalization, Views and a set of queries for our transactions).
 
+# Repo structure
+
+* `code` - The code for the project. Contains two folders, `app` for the application code and `queries` for the database interactions and setup.
+
+* `docs` - All the documents created during the projects for the different stages
+
+* `data` - All the prepared transcripts we used for the initial database.
+
 # Contributing 
 
 This section is for CSC 315 students who may continue to work on this after the original developers (if this project remains private) 
