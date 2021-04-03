@@ -7,7 +7,7 @@ In addition to our README, please visit our wiki for more information.
 
 # Technology
 
-The database used will be postgres. The back-end server will be made with Python and Flask. The front-end will use HTML, CSS, and JavaScript.
+The database used will be postgres. The back-end server will be made with Python, Flask, and Psycopg2. The front-end will use HTML, CSS, and JavaScript.
 
 # Installation and Setup
 
