@@ -1,1 +1,1 @@
-SELECT user_id FROM users WHERE email='test@tcnj.edu' AND password_hash='some_hash';
+SELECT user_id FROM users WHERE email='test@tcnj.edu';

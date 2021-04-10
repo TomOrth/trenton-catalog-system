@@ -6,15 +6,15 @@ import sys
 
 # CHANGE THESE VALUES DEPENDING ON THE TRANSCRIPT
 
-name = "Joel Millner"
+name = "Charles Terry"
 
-summary = "Joel Millner is interviewed about the life of his father, Nathan. He talked about his livlihood, selling things like hotdogs and candy. His father lived in union street. He also owned a hardware store for a time on South Broad street. He had many family members."
+summary = "Charles Terry is interviewed about his life in old trenton and other aspects such as working for the Board of Education."
 
-audio_path = "joel.mp3"
+audio_path = "https://archive.org/download/CharlesTerryInterview415115/Charles%20Terry%20Interview%204%EF%80%A215%EF%80%A215.MP3"
 
-text_path = "joel.pdf"
+text_path = "charles.pdf"
 
-title = "Joel Millner Interview Transcription"
+title = "Charles Terry Interview Transcription"
 
 content = ""
 
@@ -34,13 +34,13 @@ p = pd.DataFrame(columns=['name'], data=participants)
 p.to_csv("insert_data_participants.csv", sep="|", index=False)
 
 # Prepare the locations CSV
-locations = [["Union Street"], ["South Broad Street"]]
+locations = [["Mercer Street"]]
 l = pd.DataFrame(columns=['street_name'], data=locations)
 l.to_csv("insert_data_locations.csv", sep="|", index=False)
 
 # Prepare the keywords CSV
-keywords = [["millner"], ["indistinguishable"]]
-k = pd.DataFrame(columns=['word'], data=keywords)
+keywords = [["charles"], ["neighborhood"]]
+k = pd.DataFrame(columns=['keyword'], data=keywords)
 k.to_csv('insert_data_keywords.csv', sep="|", index=False)
 
 

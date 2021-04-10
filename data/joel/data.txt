@@ -1,0 +1,15 @@
+Name: "Joe Millner"
+
+Summary: "Joel Millner is interviewed about the life of his father, Nathan. He talked about his livlihood, selling things like hotdogs and candy. His father lived in union street. He also owned a hardware store for a time on South Broad street. He had many family members."
+
+Audio Path: "https://archive.org/download/JHS24SideB/JHS%2024-%20side%20B.mp3"
+
+Text Path: "joel.pdf"
+
+Title: "Joel Millner Interview Transcription"
+
+Participants: "Joe Millner"
+
+Locations: "Union Street", "South Broad Street"
+
+Keywords: "millner", "indistinguishable"

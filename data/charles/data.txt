@@ -1,0 +1,15 @@
+Name: "Charles Terry"
+
+Summary: "Joel Millner is interviewed about the life of his father, Nathan. He talked about his livlihood, selling things like hotdogs and candy. His father lived in union street. He also owned a hardware store for a time on South Broad street. He had many family members."
+
+Audio Path: "https://archive.org/download/CharlesTerryInterview415115/Charles%20Terry%20Interview%204%EF%80%A215%EF%80%A215.MP3"
+
+Text Path: "charles.pdf"
+
+Title: "Charles Terry Interview Transcription"
+
+Participants: "Charles Terry"
+
+Locations: "Mercer Street"
+
+Keywords: "charles", "neighborhood"

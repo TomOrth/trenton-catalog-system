@@ -1,0 +1,15 @@
+Name: "Brenda Camp"
+
+Summary: "Brenda Camp is interviewed about the original Trentonia and what life was like growing up in it."
+
+Audio Path: "https://archive.org/download/BrendaCampInterview/Brenda_Camp_Interview.MP3"
+
+Text Path: "brenda.pdf"
+
+Title: "Brenda Camp Interview Transcription"
+
+Participants: "Brenda Camp"
+
+Locations: "Fountain Ave", "East State Street"
+
+Keywords: "downtown", "trenton"

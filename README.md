@@ -21,11 +21,21 @@ Please see [this document](https://github.com/TCNJ-degoodj/stage-iv-group-1/blob
 
 # Repo structure
 
-* `code` - The code for the project. Contains two folders, `app` for the application code and `queries` for the database interactions and setup.
+* `code` - The code for the project. Contains two folders, `app` for the application code and `queries` for the database interactions and setup. See `queries/README.md` for info about the SQL queries.
 
-* `docs` - All the documents created during the projects for the different stages
+* `docs` - All the documents created during the projects for the different stages.
 
-* `data` - All the prepared transcripts we used for the initial database.
+* `data` - All the prepared transcripts we used for the initial database. See `data/README.md` for more information about the data files.
+
+# Database Setup
+NOTE: This assumes that none of the tables or views currently exist or have prepopulated data in it.
+
+1. In terminal, cd to code/queries
+2. Update the CSV file paths to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
+3. Ensure that the shell file can be executed from the terminal. Run `chmod +x setup.sh`
+4. Run `./setup.sh`
+
+Please see `queries/README.md` for more information
 
 # Contributing 
 

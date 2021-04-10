@@ -1,0 +1,47 @@
+Script started on 2021-04-10 00:07:01-04:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="168" LINES="19"]
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries[00m$ ./setup.sh 
+[sudo] password for lion: 
+ALTER ROLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+INSERT 0 3
+COPY 1
+COPY 1
+COPY 2
+COPY 2
+INSERT 0 1
+INSERT 0 2
+INSERT 0 2
+INSERT 0 2
+COPY 1
+COPY 1
+COPY 2
+COPY 2
+INSERT 0 1
+INSERT 0 2
+INSERT 0 2
+INSERT 0 1
+COPY 1
+COPY 1
+COPY 1
+COPY 2
+INSERT 0 1
+INSERT 0 2
+INSERT 0 2
+ALTER ROLE
+]0;lion@UbuntuMATE: ~/stage-v-group-1/code/queries[01;32mlion@UbuntuMATE[00m:[01;34m~/stage-v-group-1/code/queries[00m$ exit
+exit
+
+Script done on 2021-04-10 00:07:22-04:00 [COMMAND_EXIT_CODE="0"]

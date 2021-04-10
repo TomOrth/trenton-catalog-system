@@ -100,3 +100,64 @@ CREATE VIEW keyword_transcript_view AS
    SELECT * FROM (SELECT keyword_transcript_view.keyword, keyword_transcript_view.k_id, location_transcript_view.location_id, location_transcript_view.street_name, participant_transcript_view.* FROM participant_transcript_view
                   LEFT OUTER JOIN keyword_transcript_view ON keyword_transcript_view.transcript_id = participant_transcript_view.transcript_id
                   LEFT OUTER JOIN location_transcript_view ON location_transcript_view.transcript_id = participant_transcript_view.transcript_id) as FT;
+
+
+-- Insert users
+
+-- Dummy Password for the users are "password", "admin", and "lib"
+INSERT INTO users(email, password_hash, lflag) VALUES ('test@gmail.com', '$2b$12$B0ChMc2GW9RSKShJTqQnLOwemKAfQZPCPOG/pfQip8h6iTXGngQ9m', 0), ('test2@gmail.com', '$2b$12$Ddna1VJdMgIjpcylmbsMjuhUDZb.c/oujD8S9gEOUuHaz9Z9Gm/92', 0), ('lib@gmail.com', '$2b$12$bnWrAP.siJ.RNl1V5D66c.GZMXEu4rZGuWsuSpU8hmw/Ucm7L/uJ6', 1);
+
+-- UPDATE WITH YOUR PATH ON YOUR SYSTEM FOR THE COPY COMMANDS
+
+-- Insert first transcript and relevant information
+COPY transcripts(title, text_file_path, audio_file_path, summary, text_content)
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
+
+COPY participants(name)
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
+
+COPY locations(street_name)
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
+
+COPY keywords(keyword)
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
+
+INSERT INTO participates VALUES (1,1);
+INSERT INTO describes VALUES (1,1), (2,1);
+INSERT INTO mentions VALUES (1,1), (2,1);
+INSERT INTO bookmarks VALUES (1,1), (2,1);
+
+-- Insert second transcript with relevant information
+COPY transcripts(title, text_file_path, audio_file_path, summary, text_content)
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
+
+COPY participants(name)
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
+
+COPY locations(street_name)
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
+
+COPY keywords(keyword)
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
+
+INSERT INTO participates VALUES (2,2);
+INSERT INTO describes VALUES (3,2), (4,2);
+INSERT INTO mentions VALUES (3,2), (4,2);
+INSERT INTO bookmarks VALUES (1,2);
+
+-- Insert third transcript with relevant information
+COPY transcripts(title, text_file_path, audio_file_path, summary, text_content)
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
+
+COPY participants(name)
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
+
+COPY locations(street_name)
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
+
+COPY keywords(keyword)
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
+
+INSERT INTO participates VALUES (3,3);
+INSERT INTO describes VALUES (5,3), (6,3);
+INSERT INTO mentions VALUES (4,3), (5,3);
