@@ -14,3 +14,4 @@ Since the transcripts are big, there is a need to format the data into the CSV f
 2. In prepare.py, replace all the variables with the correct information
 3. For locations, keywords, and participants, update the lists in the dataframe calls
 4. Execute the script, doing `python3 prepare.py <path to raw.txt file>`
+5. Move the CSV into the appropriate directory under the transcript folder
