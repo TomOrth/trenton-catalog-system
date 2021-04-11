@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block container %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/auth/auth.css') }}/>
+
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-body">
+      <h4 class="card-title">Signup</h4>
+      <form method="POST" action="/auth/signup"  accept-charset="UTF-8" role="form">
+        {{ form.csrf_token }}
+        {% for field in form if field.name != 'csrf_token' %}
+            <div class="form-group">
+                {{ field.label() }}
+                {{ field() }}
+                {% for error in field.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+  </div>
+
+
+{% endblock %}
