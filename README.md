@@ -37,6 +37,16 @@ NOTE: This assumes that none of the tables or views currently exist or have prep
 
 Please see `queries/README.md` for more information
 
+# Dependency Installation
+1. In terminal, cd to `code/app`
+2. Run `pip3 install -r requirements.txt`
+3. If you wish to prepare other transcript data csv files, you will also need to do `pip3 install pandas`
+
+# Start Application
+1. In terminal, cd to `code/app`
+2. Ensure the shell file can be executed by doing `chmod +x start.sh`
+3. Run `./start.sh`
+
 # Contributing 
 
 This section is for CSC 315 students who may continue to work on this after the original developers (if this project remains private) 

@@ -1,0 +1,6 @@
+psycopg2-binary
+flask
+flask-login
+flask-wtf
+bcrypt
+email-validator
