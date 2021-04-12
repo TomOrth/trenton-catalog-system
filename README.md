@@ -5,6 +5,8 @@ more in the stages, more of these readme sections will be filled out.
 
 In addition to our README, please visit our wiki for more information.
 
+Our group proposal is (here)[https://github.com/TCNJ-degoodj/stage-v-group-1/blob/main/docs/Proposal_stage3.pdf]
+
 # Technology
 
 The database used will be postgres. The back-end server will be made with Python, Flask, and Psycopg2. The front-end will use HTML, CSS, and JavaScript.
@@ -15,7 +17,7 @@ We will put steps to setup the project as it is developed
 
 # Database Design
 
-Please see [this document](https://github.com/TCNJ-degoodj/stage-iv-group-1/blob/main/docs/Database%20Model%20Updated%20-%20Stage%20IV.pdf) for our database design that has an EER diagram and relational schema.
+Please see [this document](https://github.com/TCNJ-degoodj/stage-v-group-1/blob/main/docs/Database%20Model%20Updated%20-%20Stage%20IV.pdf) for our database design that has an EER diagram and relational schema.
 
 Please see [this document](https://github.com/TCNJ-degoodj/stage-v-group-1/blob/main/docs/Stage%20Va%20-%20Updated%20Design%20Doc.pdf) to see our design (Normalization, Views and a set of queries for our transactions).
 
