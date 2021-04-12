@@ -39,6 +39,8 @@ NOTE: This assumes that none of the tables or views currently exist or have prep
 3. Ensure that the shell file can be executed from the terminal. Run `chmod +x setup.sh`
 4. Run `./setup.sh`
 
+A few notes: This setup script assumes you are running it on the TCNJ CSC 315 VM and have a database called lion setup with a lion database user. If these aren't made, set these up using the appropriate Postgres commands.
+
 Please see `queries/README.md` for more information
 
 # Dependency Installation
