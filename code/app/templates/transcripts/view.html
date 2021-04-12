@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block container %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/transcripts/search.css') }}/>
+        <div class="results">
+            <div class="row col-lg-12">
+                <div class="card border-primary mb-3">
+                    <div class="card-body">
+                        <div class="header">
+                            <a href="#"><h3 class="card-title">{{ data['title'] }}</h3></a>
+                        </div>
+                        <h4>Summary: {{ data['summary'] }}</h4>
+                        <h5>Participants: {{ data['participants'] }}</h5>
+                        <h5>Locations: {{ data['locations'] }}</h5>
+                        <h5>Keywords: {{ data['keywords'] }}</h5>
+                        <h5>Audio:</h5>
+                        <audio controls>
+                            <source src={{ data['audio_file_path'] }}>
+                        </audio>
+                        <br>
+                        <a href="/transcripts/download/text/{{ data['text_file_path'] }}">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

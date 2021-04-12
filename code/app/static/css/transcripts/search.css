@@ -1,0 +1,15 @@
+form, .results {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.results, .card, .card-body {
+    width: 100%;
+}
+
+.results {
+    padding-top: 10px;
+}
+
+.header a, .header button {
+    display: inline-block;
+}

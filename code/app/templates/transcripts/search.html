@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+{% block container %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/transcripts/search.css') }}/>
+<form method="POST" action="/transcripts/search"  accept-charset="UTF-8" role="form">
+    {{ form.csrf_token }}
+    {% for field in form if field.name != 'csrf_token'%}
+        <div class="form-group">
+            {{ field.label() }}
+            {{ field(class="form-control") }}
+            {% for error in field.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <input type="submit" value="Search" class="btn btn-primary">
+    </form>
+        <div class="results">
+            {% for entry in data %}
+            <div class="row col-lg-12">
+                <div class="card border-primary mb-3">
+                    <div class="card-body">
+                        <div class="header">
+                            <a href="#"><h3 class="card-title">{{ entry['title'] }}</h3></a>
+                            <button id={{ entry['transcript_id'] }} class="btn btn-primary" onClick="bookmark({{ entry['transcript_id']|safe}})">
+                                {% if not entry['bookmarked'] %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                                {% else %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                                    <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                                  </svg>
+                                {% endif %}
+                            </button>
+                        </div>
+                        <h4>Summary: {{ entry['summary'] }}</h4>
+                        <h5>Participants: {{ entry['participants'] }}</h5>
+                        <h5>Locations: {{ entry['locations'] }}</h5>
+                        <h5>Keywords: {{ entry['keywords'] }}</h5>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <script>
+            function bookmark(id) {
+                var http = new XMLHttpRequest();
+                var url = "/transcripts/bookmark";
+                params = "id=" + id;
+                http.open("POST", url, true);
+                http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                http.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Typical action to be performed when the document is ready:
+                    if(http.responseText == "Removed") {
+                        document.getElementById(id).innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/></svg>';
+                    }
+                    else {
+                        document.getElementById(id).innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16"><path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg>';
+                    }
+                }
+            };
+            http.send(params);
+            }
+        </script>
+{% endblock %}
