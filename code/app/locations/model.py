@@ -1,50 +1,50 @@
 """
-Keyword model to represent the keywords table
+Location Entity to represent the locations table
 
 By: Tom Orth
 """
 from app.database.entity import Entity
-class Keyword(Entity):
+class Location(Entity):
     """
-    Keyword Entity Class
+    Location entity class
     """
     def __init__(self):
         """
-        Instantiate the object
+        Constructor to build the object
         """
-        self.k_id = -1
-        self.keyword = ""
+        self.location_id = -1
+        self.street_name = ""
     
     @staticmethod
     def run_and_return(conn, query):
         """
-        Method will run and create a Keyword object to be used by the application
+        Method will run and create a Location object to be used by the application
         """
         columns, content = conn.execute_and_return(query)
-        keyword = Keyword()
-        return Keyword.translate(keyword, columns, content[0])
+        location = Location()
+        return Location.translate(location, columns, content[0])
 
     @staticmethod
     def run_and_return_many(conn, query):
         """
-        Method will run and create a list of Keyword objects
+        Method will run and create a list of Location objects
         """
         columns, content = conn.execute_and_return(query)
-        keywords = []
+        locations = []
         for _ in range(len(content)):
-            keywords.append(Keyword())
-        return Keyword.translate_many(keywords, columns, content)
+            locations.append(Location())
+        return Location.translate_many(locations, columns, content)
 
     @staticmethod
     def translate(obj, columns, content):
         """
         Internal method to handle translation of a tuple to object
         """
-        return super(Keyword, Keyword).translate(obj, columns, content)
+        return super(Location, Location).translate(obj, columns, content)
     
     @staticmethod
     def translate_many(obj, columns, contents):
         """
         Internal method to handle translation of a tuples to objects
         """
-        return super(Keyword, Keyword).translate_many(obj, columns, contents)
+        return super(Location, Location).translate_many(obj, columns, contents)
