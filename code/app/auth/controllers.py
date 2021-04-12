@@ -6,8 +6,8 @@ By: Tom Orth
 from app.auth.model import User
 from app.auth.form import AuthForm
 from app.setup import conn
-from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash, session
-from flask_login import login_required, login_user, logout_user, current_user
+from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash
+from flask_login import login_user, logout_user
 import bcrypt
 
 # Sets up the Blueprint
@@ -76,7 +76,6 @@ def signin():
 
 # Route to logout
 @auth.route('/logout')
-@login_required
 def logout():
     logout_user()
     return redirect(url_for("main"))

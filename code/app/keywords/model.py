@@ -1,4 +1,4 @@
-from database.entity import Entity
+from app.database.entity import Entity
 class Keyword(Entity):
     def __init__(self):
         self.k_id = -1

@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block container %}
 
-<p>Here</p>
+<img src={{ url_for('static', filename='imgs/logo.png') }} width="500px" height="500px">
+
+<div class="center">
+    <h5>Welcome to the Trentonia catalog! This system contains Trentonia transcript data! Please sign-in and view the data.</h5>
+</div>
 
 {% endblock %}

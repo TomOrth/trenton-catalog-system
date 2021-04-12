@@ -35,7 +35,7 @@ class Entity(object):
     
     @staticmethod
     def run_and_return_many(conn, query):
-                """
+        """
         Runs a query on a given Connection object to get a list of resulting Entities
         """
         pass

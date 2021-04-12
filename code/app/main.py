@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from app.auth.controllers import auth
-from app.setup import conn
 from app.auth.model import User
+from app.setup import conn
 from flask_login import LoginManager, current_user
 
 # Basic Flask Setup
@@ -26,7 +26,7 @@ def load_user(user_id):
 # Redirect unauthorized access to signin
 @login_manager.unauthorized_handler
 def unauthorized_callback():
-    return redirectuserl_for("auth.signin"))
+    return redirect(url_for("auth.signin"))
 
 if __name__ == "__main__":
     app.config['TEMPLATES_AUTO_RELOAD'] = True

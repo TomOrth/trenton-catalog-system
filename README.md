@@ -27,6 +27,8 @@ Please see [this document](https://github.com/TCNJ-degoodj/stage-iv-group-1/blob
 
 * `data` - All the prepared transcripts we used for the initial database. See `data/README.md` for more information about the data files.
 
+* `terminal_session_files` - Terminal Session Files to show queries running
+
 # Database Setup
 NOTE: This assumes that none of the tables or views currently exist or have prepopulated data in it.
 
