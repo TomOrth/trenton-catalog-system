@@ -9,13 +9,13 @@
         {% for field in form if field.name != 'csrf_token' and field.name != 'lflag' %}
             <div class="form-group">
                 {{ field.label() }}
-                {{ field() }}
+                {{ field(class="form-control") }}
                 {% for error in field.errors %}
                     <div class="error">{{ error }}</div>
                 {% endfor %}
             </div>
         {% endfor %}
-        <input type="submit" value="Submit">
+        <input type="submit" value="Sign-in" class="btn btn-primary">
         </form>
     </div>
   </div>
