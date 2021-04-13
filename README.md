@@ -35,7 +35,7 @@ Please see [this document](https://github.com/TCNJ-degoodj/stage-v-group-1/blob/
 NOTE: This assumes that none of the tables or views currently exist or have prepopulated data in it.
 
 1. In terminal, cd to code/queries
-2. Update the CSV file paths to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
+2. Update the CSV file paths in `setup.sql` to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
 3. Ensure that the shell file can be executed from the terminal. Run `chmod +x setup.sh`
 4. Run `./setup.sh`
 
