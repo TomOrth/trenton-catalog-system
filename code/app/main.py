@@ -32,7 +32,7 @@ def load_user(user_id):
     return User.run_and_return(conn, f"SELECT * FROM users WHERE user_id=\'{user_id}\'")
 
 # Redirect unauthorized access to signin
-@app.login_manager.unauthorized_handler
+@login_manager.unauthorized_handler
 def unauthorized_callback():
     return redirect(url_for("auth.signin"))
 

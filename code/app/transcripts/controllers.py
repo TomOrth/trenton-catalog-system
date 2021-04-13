@@ -15,8 +15,8 @@ from flask_login import login_required, current_user
 transcripts = Blueprint("transcripts", __name__, url_prefix="/transcripts")
 
 # Search page for transcripts
-@login_required
 @transcripts.route("/search", methods=["GET", "POST"])
+@login_required
 def search():
     search_form = SearchForm(request.form) # Search Form
     if request.method == "POST" and search_form.validate_on_submit: # If POST request, we redirect to GET but with query string
@@ -48,8 +48,8 @@ def search():
         return render_template("transcripts/search.html", title="Search", form=search_form, loggedin=current_user.is_authenticated, email=current_user.email, data=transcripts_res)
 
 # Displays a single transcript
-@login_required
 @transcripts.route("/<id>")
+@login_required
 def view(id):
     # Retrieve all the transcripts with the relevant information, then convert
     transcripts_objs = FullTranscript.run_and_return_many(conn, f"SELECT * FROM full_transcript_view WHERE transcript_id={id};")
