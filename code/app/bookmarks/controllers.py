@@ -36,7 +36,7 @@ def list():
         # After retrieving the transcripts, we parse them into dictionarys to be sent back to the main screen
         transcripts_res = BookmarkTranscript.run_and_return_many(conn, search_query)
         transcripts_dicts = [transcript.__dict__ for transcript in transcripts_res]
-        for i, transcript in transcripts_dicts:
+        for i, transcript in enumerate(transcripts_dicts):
             del transcript["password_hash"]
             del transcript["user_id"]
             transcripts_dicts[i] = transcript
