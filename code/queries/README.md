@@ -3,7 +3,7 @@
 In order to setup the tables and views along with prepopulated data do the following:
 
 1. cd into this folder
-2. Update the CSV file paths to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
+2. Update the CSV file paths in `setup.sql` to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
 3. Ensure that the shell file can be executed from the terminal. Run `chmod +x setup.sh`
 4. Run `./setup.sh`
 
