@@ -3,6 +3,7 @@ from app.auth.controllers import auth
 from app.auth.model import User
 
 from app.transcripts.controllers import transcripts
+from app.bookmarks.controllers import bookmarks
 
 from app.setup import conn
 from flask_login import LoginManager, current_user
@@ -17,6 +18,7 @@ app.config['UPLOAD_FOLDER'] = "uploads"
 # We have to register each blueprint
 app.register_blueprint(auth)
 app.register_blueprint(transcripts)
+app.register_blueprint(bookmarks)
 
 # Main endpoint for the application
 @app.route("/")

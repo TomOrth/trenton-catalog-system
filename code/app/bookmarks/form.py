@@ -20,4 +20,4 @@ class SearchForm(FlaskForm):
     """
     search = TextField("Seach", [
                 Required(message='Must provide a search query')])
-    category = SelectField("Category", choices = ["participants", "location", "keyword", "title", "content", "summary"])
+    category = SelectField("Category", choices = ["title", "content", "summary"])
