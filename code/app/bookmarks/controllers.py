@@ -1,5 +1,5 @@
 """
-Controller for the transcripts (full info)
+Controller for the bookmarks
 
 By: Tom Orth
 """
