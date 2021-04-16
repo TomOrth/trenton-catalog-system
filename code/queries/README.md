@@ -2,6 +2,8 @@
 
 In order to setup the tables and views along with prepopulated data do the following:
 
+A few forward notes before the below steps: This setup script assumes you are running it on the TCNJ CSC 315 VM and have a database called lion setup with a lion database user. If these aren't made, set these up using the appropriate Postgres commands (createdb lion and createuser -P lion and enter the password lion). You will be prompted for the VMs or computer's password as the lion user is temporarily given superuser priviliges to allow for the copy command to work. This requires using sudo and accessing the postgres user.
+
 1. cd into this folder
 2. Update the CSV file paths in `setup.sql` to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
 3. Ensure that the shell file can be executed from the terminal. Run `chmod +x setup.sh`
