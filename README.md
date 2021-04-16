@@ -34,12 +34,14 @@ Please see [this document](https://github.com/TCNJ-degoodj/stage-v-group-1/blob/
 # Database Setup
 NOTE: This assumes that none of the tables or views currently exist or have prepopulated data in it.
 
-1. In terminal, cd to code/queries
+A few more notes: This setup script assumes you are running it on the TCNJ CSC 315 VM and have a database called lion setup with a lion database user. If these aren't made, set these up using the appropriate Postgres commands (`createdb lion` and `createuser -P lion` and enter the password lion). You will be prompted for the VMs or computer's password as the lion user is temporarily given superuser priviliges to allow for the copy command to work. This requires using sudo and accessing the postgres user.
+
+
+1. In terminal (assuming your terminal current directory is the repository's folder), cd to `code/queries`
 2. Update the CSV file paths in `setup.sql` to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
 3. Ensure that the shell file can be executed from the terminal. Run `chmod +x setup.sh`
 4. Run `./setup.sh`
 
-A few notes: This setup script assumes you are running it on the TCNJ CSC 315 VM and have a database called lion setup with a lion database user. If these aren't made, set these up using the appropriate Postgres commands. You will be prompted for the VMs password as the lion user temporarily will have superuser priviliges to allow for the copy command to work. This requires using sudo and accessing the postgres user.
 
 Please see `queries/README.md` for more information
 
