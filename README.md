@@ -52,7 +52,8 @@ Please see `queries/README.md` for more information
 4. If you have an issue starting the application by following the `Start Application` guidelines, run `sudo apt install python3-flask`. This issue happened on one group members VM but not on another so that is why this is not an earlier step.
 
 # Start Application
-1. In terminal, cd to `code/app`
+NOTE: Before running. If you are not on the TCNJ VM for CSC 315, you must update/create a config.yaml that has `db`, `user`, `password` all set in it for the database user that reflects your database setup (Otherwise, use the file currently in this repository).
+1. In terminal (assuming your terminal current directory is the repository's folder), cd to `code/app`
 2. Ensure the shell file can be executed by doing `chmod +x start.sh`
 3. Run `./start.sh`
 4. If you have an issue starting the application and receive an error about the `flask` command not being found on line 1 of the shell script, run `sudo apt install python3-flask` and re-run the shell script. This issue happened on one group members VM but not on another so that is why this is not an earlier step.
