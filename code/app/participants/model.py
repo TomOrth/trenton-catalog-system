@@ -32,7 +32,7 @@ class Participant(Entity):
         columns, content = conn.execute_and_return(query)
         participants = []
         for _ in range(len(content)):
-            participants.append(Location())
+            participants.append(Participant())
         return Participant.translate_many(participants, columns, content)
 
     @staticmethod
