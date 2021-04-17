@@ -18,6 +18,6 @@ class SearchForm(FlaskForm):
     """
     Class that represents the search form
     """
-    search = TextField("Seach", [
+    search = TextField("Search", [
                 Required(message='Must provide a search query')])
     category = SelectField("Category", choices = ["title", "content", "summary"])
