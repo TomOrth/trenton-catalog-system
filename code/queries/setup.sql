@@ -111,16 +111,16 @@ INSERT INTO users(email, password_hash, lflag) VALUES ('test@gmail.com', '$2b$12
 
 -- Insert first transcript and relevant information
 COPY transcripts(title, text_file_path, audio_file_path, summary, text_content)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/joel/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
 
 COPY participants(name)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/joel/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
 
 COPY locations(street_name)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/joel/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
 
 COPY keywords(keyword)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/joel/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/joel/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
 
 INSERT INTO participates VALUES (1,1);
 INSERT INTO describes VALUES (1,1), (2,1);
@@ -129,16 +129,16 @@ INSERT INTO bookmarks VALUES (1,1), (2,1);
 
 -- Insert second transcript with relevant information
 COPY transcripts(title, text_file_path, audio_file_path, summary, text_content)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/brenda/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
 
 COPY participants(name)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/brenda/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
 
 COPY locations(street_name)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/brenda/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
 
 COPY keywords(keyword)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/brenda/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/brenda/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
 
 INSERT INTO participates VALUES (2,2);
 INSERT INTO describes VALUES (3,2), (4,2);
@@ -147,16 +147,16 @@ INSERT INTO bookmarks VALUES (1,2);
 
 -- Insert third transcript with relevant information
 COPY transcripts(title, text_file_path, audio_file_path, summary, text_content)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/charles/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_transcript.csv' DELIMITER '|' CSV HEADER;
 
 COPY participants(name)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/charles/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_participants.csv' DELIMITER '|' CSV HEADER;
 
 COPY locations(street_name)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/charles/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_locations.csv' DELIMITER '|' CSV HEADER;
 
 COPY keywords(keyword)
-FROM '/Users/matthewvansoelen/Desktop/stage-v-group-1/data/charles/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
+FROM '/home/lion/stage-v-group-1/data/charles/csv/insert_data_keywords.csv' DELIMITER '|' CSV HEADER;
 
 INSERT INTO participates VALUES (3,3);
 INSERT INTO describes VALUES (5,3), (6,3);
