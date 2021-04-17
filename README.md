@@ -34,12 +34,14 @@ Please see [this document](https://github.com/TCNJ-degoodj/stage-v-group-1/blob/
 # Database Setup
 NOTE: This assumes that none of the tables or views currently exist or have prepopulated data in it.
 
-1. In terminal, cd to code/queries
+A few more notes: This setup script assumes you are running it on the TCNJ CSC 315 VM and have a database called lion setup with a lion database user. If these aren't made, set these up using the appropriate Postgres commands (`createdb lion` and `createuser -P lion` and enter the password lion). You will be prompted for the VMs or computer's password as the lion user is temporarily given superuser priviliges to allow for the copy command to work. This requires using sudo and accessing the postgres user.
+
+
+1. In terminal (assuming your terminal current directory is the repository's folder), cd to `code/queries`
 2. Update the CSV file paths in `setup.sql` to match your file system. The COPY command requires an absolute path to the CSVs in order to work.
 3. Ensure that the shell file can be executed from the terminal. Run `chmod +x setup.sh`
 4. Run `./setup.sh`
 
-A few notes: This setup script assumes you are running it on the TCNJ CSC 315 VM and have a database called lion setup with a lion database user. If these aren't made, set these up using the appropriate Postgres commands. You will be prompted for the VMs password as the lion user temporarily will have superuser priviliges to allow for the copy command to work. This requires using sudo and accessing the postgres user.
 
 Please see `queries/README.md` for more information
 
@@ -50,7 +52,8 @@ Please see `queries/README.md` for more information
 4. If you have an issue starting the application by following the `Start Application` guidelines, run `sudo apt install python3-flask`. This issue happened on one group members VM but not on another so that is why this is not an earlier step.
 
 # Start Application
-1. In terminal, cd to `code/app`
+NOTE: Before running. If you are not on the TCNJ VM for CSC 315, you must update/create a config.yaml that has `db`, `user`, `password` all set in it for the database user that reflects your database setup (Otherwise, use the file currently in this repository).
+1. In terminal (assuming your terminal current directory is the repository's folder), cd to `code/app`
 2. Ensure the shell file can be executed by doing `chmod +x start.sh`
 3. Run `./start.sh`
 4. If you have an issue starting the application and receive an error about the `flask` command not being found on line 1 of the shell script, run `sudo apt install python3-flask` and re-run the shell script. This issue happened on one group members VM but not on another so that is why this is not an earlier step.
