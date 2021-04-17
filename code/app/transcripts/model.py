@@ -28,8 +28,8 @@ class FullTranscript(Entity):
         Method will run and create a FullTranscript object to be used by the application
         """
         columns, content = conn.execute_and_return(query)
-        FullTranscript = FullTranscript()
-        return FullTranscript.translate(FullTranscript, columns, content[0])
+        ft = FullTranscript()
+        return FullTranscript.translate(ft, columns, content[0])
 
     @staticmethod
     def run_and_return_many(conn, query):

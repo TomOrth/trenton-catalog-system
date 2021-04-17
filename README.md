@@ -48,8 +48,9 @@ Please see `queries/README.md` for more information
 # Dependency Installation
 1. In terminal, cd to `code/app`
 2. Run `pip3 install -r requirements.txt`
-3. If you wish to prepare other transcript data csv files, you will also need to do `pip3 install pandas`
-4. If you have an issue starting the application by following the `Start Application` guidelines, run `sudo apt install python3-flask`. This issue happened on one group members VM but not on another so that is why this is not an earlier step.
+3. Next run `pip3 install -U Werkzeug==0.16.0`
+4. If you wish to prepare other transcript data csv files, you will also need to do `pip3 install pandas`
+5. If you have an issue starting the application by following the `Start Application` guidelines, run `sudo apt install python3-flask`. This issue happened on one group members VM but not on another so that is why this is not an earlier step.
 
 # Start Application
 NOTE: Before running. If you are not on the TCNJ VM for CSC 315, you must update/create a config.yaml that has `db`, `user`, `password` all set in it for the database user that reflects your database setup (Otherwise, use the file currently in this repository).

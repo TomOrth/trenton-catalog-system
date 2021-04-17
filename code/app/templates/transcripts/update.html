@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block container %}
+
+      <form method="POST" action="/transcripts/update?id={{ id|safe }}"  enctype="multipart/form-data" role="form" style="padding: 10px">
+        {{ form.csrf_token }}
+        {% for field in form if field.name not in ['csrf_token', 'participants', 'locations', 'keywords'] %}
+            <div class="form-group">
+                {{ field.label() }}
+                {{ field(class="form-control") }}
+                {% for error in field.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+
+{% endblock %}
