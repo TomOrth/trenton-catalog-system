@@ -1,33 +1,62 @@
 """
-Controller for the keywords
+Controller for the locations
 
 By: Matthew Van Soelen
 """
 
 from app.locations.model import Location
 from app.setup import conn
-from app.locations.form import SearchForm
+from app.locations.forms import SearchForm, LocationForm
 from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash, Response, send_from_directory
 from flask_login import login_required, current_user
 
 locations = Blueprint("locations", __name__, url_prefix="/locations")
 
-@locations.route("/list", methods=["GET", "Post"])
+# Display all locations
+@locations.route("/all", methods=["GET","POST"])
 @login_required
-
-def list():
+def all():
+    query = f"SELECT * FROM locations;"
+    # Retrieve all keywords 
+    locations_res = Location.run_and_return_many(conn, query)
     search_form = SearchForm(request.form) # Search Form
-    if request.method == "POST" and search_form.validate_on_submit:
-        return redirect(url_for("locations.list", search=search_form.search.data))
+    if request.method == "POST" and search_form.validate_on_submit: # If POST request, we redirect to GET but with query string
+        return redirect(url_for("locations.all", search=search_form.search.data))
     else:
         # We parse the query string to return the proper elements
+        search_query = f"SELECT * FROM locations;"
+        # Were removing single quotes for parsing reasons
         search_string = request.args.get("search")
-        search_query = f"SELECT * FROM location_transcript_view WHERE street_name ILIKE \'{search_string}\'"
+        if search_string != None:
+            search_string = search_string.replace("'", "")
 
-        # After retrieving the transcripts, we parse them into dictionarys to be sent back to the main screen
-        transcripts_res = Location.run_and_return_many(conn, search_query)
-        transcripts_dicts = [transcript.__dict__ for transcript in transcripts_res]
+        if search_string is None or search_string == '':
+            search_query = f"SELECT * FROM locations"
+        else:
+            search_query = f"SELECT * FROM locations WHERE street_name ILIKE \'%{search_string}%\'"
+        locations_res = Location.run_and_return_many(conn, search_query)
 
-        for i, transcript in enumerate(transcripts_dicts):
-            transcripts_dicts[i] = transcript
-        return render_template("locations/list.html", title="Location", form=search_form, loggedin=current_user.is_authenticated, email=current_user.email, data=transcripts_dicts)
+    return render_template("locations/all.html", form=search_form, lflag=current_user.lflag, data=locations_res, title="ALL", loggedin=current_user.is_authenticated, email=current_user.email)
+
+# Enter a new locations
+@locations.route("/new", methods=["GET","POST"])
+@login_required
+def new():
+    form = LocationForm(request.form)
+    if request.method == "POST" and form.validate_on_submit():
+        _, res = conn.execute_and_return(f"SELECT * FROM locations WHERE street_name=\'{form.location.data}\';")
+        if len(res) < 1:
+            conn.execute(f"INSERT INTO locations(street_name) VALUES (\'{form.location.data}\');")
+        return redirect(url_for("locations.new"))
+    return render_template("locations/new.html", title="New Locations", form=form, loggedin=current_user.is_authenticated, email=current_user.email)
+
+# Delete a location
+@locations.route("/delete", methods=["POST"])
+def delete():
+    id = request.form["id"]
+    try:
+        conn.execute(f"DELETE FROM locations WHERE location_id={id};")
+
+        return Response("Deleted", status=200)
+    except psycopg2.OperationalError as e:
+        return Response(f"Error: {e}", status=404)
