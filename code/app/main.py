@@ -6,6 +6,7 @@ from app.transcripts.controllers import transcripts
 from app.bookmarks.controllers import bookmarks
 from app.keywords.controllers import keywords
 from app.locations.controllers import locations
+from app.participants.controllers import participants
 
 from app.setup import conn
 from flask_login import LoginManager, current_user
@@ -23,6 +24,7 @@ app.register_blueprint(transcripts)
 app.register_blueprint(bookmarks)
 app.register_blueprint(keywords)
 app.register_blueprint(locations)
+app.register_blueprint(participants)
 
 # Main endpoint for the application
 @app.route("/")
