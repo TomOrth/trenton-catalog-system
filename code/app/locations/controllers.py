@@ -13,7 +13,7 @@ from flask_login import login_required, current_user
 locations = Blueprint("locations", __name__, url_prefix="/locations")
 
 # Display all locations
-@locations.route("/all", methods=["GET","POST"])
+@locations.route("/search", methods=["GET","POST"])
 @login_required
 def all():
     query = f"SELECT * FROM locations;"
@@ -36,7 +36,7 @@ def all():
             search_query = f"SELECT * FROM locations WHERE street_name ILIKE \'%{search_string}%\'"
         locations_res = Location.run_and_return_many(conn, search_query)
 
-    return render_template("locations/all.html", form=search_form, lflag=current_user.lflag, data=locations_res, title="ALL", loggedin=current_user.is_authenticated, email=current_user.email)
+    return render_template("locations/search.html", form=search_form, lflag=current_user.lflag, data=locations_res, title="ALL", loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Enter a new locations
 @locations.route("/new", methods=["GET","POST"])
@@ -47,8 +47,8 @@ def new():
         _, res = conn.execute_and_return(f"SELECT * FROM locations WHERE street_name=\'{form.location.data}\';")
         if len(res) < 1:
             conn.execute(f"INSERT INTO locations(street_name) VALUES (\'{form.location.data}\');")
-        return redirect(url_for("locations.new"))
-    return render_template("locations/new.html", title="New Locations", form=form, loggedin=current_user.is_authenticated, email=current_user.email)
+        return redirect(url_for("locations.all"))
+    return render_template("locations/new.html", title="New Locations", lflag=current_user.lflag, form=form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Delete a location
 @locations.route("/delete", methods=["POST"])

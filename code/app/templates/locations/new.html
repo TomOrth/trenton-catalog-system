@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block container %}
 
-      <form method="POST" action="/keywords/new" role="form" style="padding: 10px">
+      <form method="POST" action="/locations/new" role="form" style="padding: 10px">
         {{ form.csrf_token }}
         {% for field in form if field.name != 'csrf_token' %}
             <div class="form-group">

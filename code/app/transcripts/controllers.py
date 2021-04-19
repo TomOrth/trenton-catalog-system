@@ -71,7 +71,7 @@ def view(id):
     res = transcripts_res[0]
     res['audio_file_path'] = transcripts_objs[0].audio_file_path
     res['text_file_path'] = transcripts_objs[0].text_file_path
-    return render_template("transcripts/view.html", data=res, title="View", loggedin=current_user.is_authenticated, email=current_user.email)
+    return render_template("transcripts/view.html", data=res, title="View", lflag=current_user.lflag, loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Toggle a bookmarked transcript
 @transcripts.route("/bookmark", methods=["POST"])
@@ -112,7 +112,7 @@ def new():
         for lid in form.locations.data:
             conn.execute(f"INSERT INTO mentions VALUES ({lid}, {id});")
         return redirect(url_for("transcripts.search"))
-    return render_template("transcripts/new.html", title="New Transcript", form=form, loggedin=current_user.is_authenticated, email=current_user.email)
+    return render_template("transcripts/new.html", title="New Transcript", lflag=current_user.lflag, form=form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 @transcripts.route("/update", methods=["GET", "POST"])
 @login_required
@@ -133,7 +133,7 @@ def update():
     form.summary.data = transcript.summary
     form.audio_path.data = transcript.audio_file_path
     form.text_content.data = transcript.text_content
-    return render_template("transcripts/update.html", id=id, title="Update Transcript", form=form, loggedin=current_user.is_authenticated, email=current_user.email)
+    return render_template("transcripts/update.html", id=id, title="Update Transcript", lflag=current_user.lflag, form=form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Download a pdf transcript
 @transcripts.route("/download/text/<filename>")

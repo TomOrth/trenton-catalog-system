@@ -13,7 +13,7 @@ from flask_login import login_required, current_user
 keywords = Blueprint("keywords", __name__, url_prefix="/keywords")
 
 # Display all keywords
-@keywords.route("/all", methods=["GET","POST"])
+@keywords.route("/search", methods=["GET","POST"])
 @login_required
 def all():
     query = f"SELECT * FROM keywords;"
@@ -36,7 +36,7 @@ def all():
             search_query = f"SELECT * FROM keywords WHERE keyword ILIKE \'%{search_string}%\'"
         keywords_res = Keyword.run_and_return_many(conn, search_query)
 
-    return render_template("keywords/all.html", form=search_form, lflag=current_user.lflag, data=keywords_res, title="ALL", loggedin=current_user.is_authenticated, email=current_user.email)
+    return render_template("keywords/search.html", form=search_form, lflag=current_user.lflag, data=keywords_res, title="ALL", loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Enter a new keyword
 @keywords.route("/new", methods=["GET","POST"])
@@ -47,8 +47,8 @@ def new():
         _, res = conn.execute_and_return(f"SELECT * FROM keywords WHERE keyword=\'{form.keyword.data}\';")
         if len(res) < 1:
             conn.execute(f"INSERT INTO keywords(keyword) VALUES (\'{form.keyword.data}\');")
-        return redirect(url_for("keywords.new"))
-    return render_template("keywords/new.html", title="New Keywords", form=form, loggedin=current_user.is_authenticated, email=current_user.email)
+        return redirect(url_for("keywords.all"))
+    return render_template("keywords/new.html", title="New Keywords", lflag=current_user.lflag,  form=form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Delete a keyword
 @keywords.route("/delete", methods=["POST"])

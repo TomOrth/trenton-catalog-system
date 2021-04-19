@@ -16,7 +16,7 @@ class SearchForm(FlaskForm):
     """
     Class that represents the search form
     """
-    search = TextField("")
+    search = TextField("Search")
 
 class NewForm(FlaskForm):
     """

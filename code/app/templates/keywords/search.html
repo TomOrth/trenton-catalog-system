@@ -1,13 +1,9 @@
 {% extends 'base.html'%}
 {% block container %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/general.css') }}/>
 <link rel="stylesheet" href={{ url_for('static', filename='css/transcripts/search.css') }}/>
-{% if lflag == 1 %}
-    <form action="/locations/new">
-        <input class="btn btn-primary" type="submit" value="New Location" /> 
-    </form>
-{% endif %}
 <div class="row col-lg-12">
-    <form method="POST" action="/locations/all" class="card border-primary mb-3" accept-charset="UTF-8" role="form">
+    <form method="POST" action="/keywords/search" accept-charset="UTF-8" role="form">
         {{ form.csrf_token }}
         {% for field in form if field.name != 'csrf_token'%}
             <div class="form-group">
@@ -28,21 +24,21 @@
     <div class="results">
         {% for entry in data %}
         <div class="row col-lg-12">
-            <div class="card border-primary mb-3">
+            <div id={{ entry['k_id'] }} class="card border-primary mb-3">
                 <div class="card-body">
                     <div class="header">
-                        <h3 class="card-title">{{ entry['street_name'] }}</h3>
+                        <h3 class="card-title">{{ entry['keyword'] }}</h3>
                         {% if lflag == 1 %}
-                        <button class="btn btn-primary" onClick="deleteLocation({{ entry['location_id']|safe }})">Delete</button>
+                        <button class="btn btn-primary" onClick="deleteKeyword({{ entry['k_id']|safe }})">Delete</button>
                         {% endif %}
                     </div>
                 </div>
             </div>
         </div>
         <script>
-            function deleteLocation(id) {
+            function deleteKeyword(id) {
                 var http = new XMLHttpRequest();
-                var url = "/locations/delete";
+                var url = "/keywords/delete";
                 params = "id=" + id;
                 http.open("POST", url, true);
                 http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

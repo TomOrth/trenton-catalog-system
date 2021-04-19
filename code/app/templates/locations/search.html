@@ -1,28 +1,30 @@
 {% extends 'base.html'%}
 {% block container %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/general.css') }}/>
 <link rel="stylesheet" href={{ url_for('static', filename='css/transcripts/search.css') }}/>
-{% if lflag == 1 %}
-    <form action="/locations/new">
-        <input class="btn btn-primary" type="submit" value="New Location" /> 
-    </form>
-{% endif %}
-<form method="POST" action="/locations/search"  accept-charset="UTF-8" role="form">
-    {{ form.csrf_token }}
-    {% for field in form if field.name != 'csrf_token'%}
-        <div class="form-group">
-            {{ field.label() }}
-            {{ field(class="form-control") }}
-            {% for error in field.errors %}
-                <div class="error">{{ error }}</div>
-            {% endfor %}
+<div class="row col-lg-12">
+    <form method="POST" action="/locations/search" accept-charset="UTF-8" role="form">
+        {{ form.csrf_token }}
+        {% for field in form if field.name != 'csrf_token'%}
+            <div class="form-group">
+                {{ field.label() }}
+                {{ field(class="form-control") }}
+                {% for error in field.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <div class="card-body">
+            <div class="header">
+                <input type="submit" value="Search" class="btn btn-primary">
+            </div>
         </div>
-    {% endfor %}
-    <input type="submit" value="Search" class="btn btn-primary">
-    </form>
+        </form>
+    </div>
     <div class="results">
         {% for entry in data %}
         <div class="row col-lg-12">
-            <div class="card border-primary mb-3">
+            <div id={{ entry['location_id'] }} class="card border-primary mb-3">
                 <div class="card-body">
                     <div class="header">
                         <h3 class="card-title">{{ entry['street_name'] }}</h3>

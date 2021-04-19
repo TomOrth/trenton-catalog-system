@@ -16,10 +16,10 @@ class SearchForm(FlaskForm):
     """
     Class that represents the search form
     """
-    search = TextField("")
+    search = TextField("Search")
 
 class LocationForm(FlaskForm):
     """
     Class the represents the new keyword form
     """
-    keyword = TextField("Location", [Required(message="Must provide keyword")])
+    location = TextField("Location", [Required(message="Must provide location")])

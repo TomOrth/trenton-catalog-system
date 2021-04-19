@@ -12,7 +12,7 @@ participants = Blueprint("participants", __name__, url_prefix="/participants")
 
 
 # Show all participants.
-@participants.route("/all", methods=["GET","POST"])
+@participants.route("/search", methods=["GET","POST"])
 @login_required
 def all():
     search_query = f"SELECT * FROM participants;"
@@ -36,7 +36,7 @@ def all():
             search_query = f"SELECT * FROM participants WHERE name ILIKE \'%{search_string}%\'"
         participants_res = Participant.run_and_return_many(conn, search_query)
 
-    return render_template("participants/all.html", form=search_form, lflag=current_user.lflag, title="All Participants", loggedin=current_user.is_authenticated, email=current_user.email, data=participants_res)
+    return render_template("participants/search.html", form=search_form, lflag=current_user.lflag, title="All Participants", loggedin=current_user.is_authenticated, email=current_user.email, data=participants_res)
 
 
 # Present a form for the user to create a new participant.
@@ -49,9 +49,9 @@ def new():
         _, res = conn.execute_and_return(f"SELECT * FROM participants WHERE name=\'{new_form.name.data}\';")
         if len(res) < 1:
             conn.execute(f"INSERT INTO participants(name) VALUES (\'{new_form.name.data}\');")
-        return redirect(url_for("participants.new"))
+        return redirect(url_for("participants.all"))
 
-    return render_template("participants/new.html", title="New Participant", form=new_form, loggedin=current_user.is_authenticated, email=current_user.email)
+    return render_template("participants/new.html", title="New Participant", lflag=current_user.lflag, form=new_form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 
 # Delete Participant

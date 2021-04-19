@@ -30,9 +30,11 @@ app.register_blueprint(participants)
 @app.route("/")
 def main():
     email = ""
+    lflag = 0
     if current_user.is_authenticated:
         email = current_user.email
-    return render_template("index.html", title="Home", loggedin=current_user.is_authenticated, email=email)
+        lflag = current_user.lflag
+    return render_template("index.html", title="Home", lflag=lflag, loggedin=current_user.is_authenticated, email=email)
 
 # Load the current user
 @login_manager.user_loader
