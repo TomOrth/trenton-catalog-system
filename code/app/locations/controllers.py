@@ -9,6 +9,7 @@ from app.setup import conn
 from app.locations.forms import SearchForm, LocationForm
 from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash, Response, send_from_directory
 from flask_login import login_required, current_user
+from app.decorators import librarian
 
 locations = Blueprint("locations", __name__, url_prefix="/locations")
 
@@ -41,6 +42,7 @@ def all():
 # Enter a new locations
 @locations.route("/new", methods=["GET","POST"])
 @login_required
+@librarian
 def new():
     form = LocationForm(request.form)
     if request.method == "POST" and form.validate_on_submit():
@@ -52,6 +54,8 @@ def new():
 
 # Delete a location
 @locations.route("/delete", methods=["POST"])
+@login_required
+@librarian
 def delete():
     id = request.form["id"]
     try:

@@ -6,6 +6,7 @@ from app.setup import conn
 from app.participants.forms import NewForm, SearchForm
 from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash, Response, send_from_directory
 from flask_login import login_required, current_user
+from app.decorators import librarian
 import psycopg2
 
 participants = Blueprint("participants", __name__, url_prefix="/participants")
@@ -42,6 +43,7 @@ def all():
 # Present a form for the user to create a new participant.
 @participants.route("/new", methods=["GET","POST"])
 @login_required
+@librarian
 def new():
     new_form = NewForm(request.form)
 
@@ -57,6 +59,7 @@ def new():
 # Delete Participant
 @participants.route("/delete", methods=["POST"])
 @login_required
+@librarian
 def delete():
     id = request.form["id"]
     try:

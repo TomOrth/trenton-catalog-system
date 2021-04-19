@@ -16,6 +16,7 @@ from flask_login import login_required, current_user
 from wtforms.validators import Optional
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import CombinedMultiDict
+from app.decorators import librarian
 import psycopg2
 import os
 
@@ -75,6 +76,7 @@ def view(id):
 
 # Toggle a bookmarked transcript
 @transcripts.route("/bookmark", methods=["POST"])
+@login_required
 def bookmark():
     # Grab the ID
     id = request.form["id"]
@@ -94,6 +96,7 @@ def bookmark():
 
 @transcripts.route("/new", methods=["GET", "POST"])
 @login_required
+@librarian
 def new():
     form = TranscriptForm(CombinedMultiDict((request.files, request.form)))
     form.participants.choices = [(participant.p_id, participant.name) for participant in Participant.run_and_return_many(conn, f"SELECT * FROM participants;")]
@@ -116,6 +119,7 @@ def new():
 
 @transcripts.route("/update", methods=["GET", "POST"])
 @login_required
+@librarian
 def update():
     id = request.args.get("id")
     transcript = FullTranscript.run_and_return(conn, f"SELECT DISTINCT transcript_id, title, summary, text_file_path, audio_file_path, text_content FROM full_transcript_view WHERE transcript_id={id};")
@@ -137,11 +141,14 @@ def update():
 
 # Download a pdf transcript
 @transcripts.route("/download/text/<filename>")
+@login_required
 def text(filename):
     return send_from_directory(current_app.config['UPLOAD_FOLDER'], filename)
 
 # Delete a transcript
 @transcripts.route("/delete", methods=["POST"])
+@login_required
+@librarian
 def delete():
     id = request.form["id"]
     try:
