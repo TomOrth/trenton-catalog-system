@@ -104,6 +104,12 @@ def new():
     form.locations.choices = [(location.location_id, location.street_name) for location in Location.run_and_return_many(conn, f"SELECT * FROM locations;")]
     if request.method == "POST" and form.validate_on_submit():
         filename = secure_filename(form.text_file.data.filename)
+        if not filename.endswith(".pdf"):
+            flash("Only PDF uploads is currently supported")
+            return redirect(url_for("transcripts.new"))
+        if not form.audio_path.data.endswith(".mp3"):
+            flash("Currently, only MP3 files are supported for audio")
+            return redirect(url_for("transcripts.new"))
         try:
             _, id_res = conn.execute_and_return(f"INSERT INTO transcripts(title, summary, text_file_path, audio_file_path, text_content) VALUES (\'{form.title.data}\', \'{form.summary.data}\', \'{filename}\', \'{form.audio_path.data}\', \'{form.text_content.data}\') RETURNING transcript_id;")
             form.text_file.data.save(os.path.join(current_app.config["UPLOAD_FOLDER"], filename))
