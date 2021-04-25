@@ -59,10 +59,15 @@ NOTE: Before running. If you are not on the TCNJ VM for CSC 315, you must update
 3. Run `./start.sh`
 4. If you have an issue starting the application and receive an error about the `flask` command not being found on line 1 of the shell script, run `sudo apt install python3-flask` and re-run the shell script. This issue happened on one group members VM but not on another so that is why this is not an earlier step.
 
+# Issues
+Currently, the open issues tagged with `future work` is work to be done not during this semester as it is outside of our proposed scope. Future developers should work on these issues as the system is improved for production readiness.
 
 # Contributing 
 
-This section is for CSC 315 students who may continue to work on this after the original developers (if this project remains private) 
-or for general developers who want to contribute (if this project is open sourced after the Spring 2021 semester).
+To contribute:
+* Find an open issue
+* Make a new branch for your Pull Request that branches off of `main`
+* Push your code as you work
+* Create the Pull Request then assign and tag a reviewer
 
 Once the project is at a stable point, this section will contain that information
