@@ -63,8 +63,8 @@ def new():
 def delete():
     id = request.form["id"]
     try:
-        conn.execute(f"DELETE FROM participants WHERE p_id= " + id + ";")
-
+        conn.execute(f"DELETE FROM participates WHERE p_id={id};")
+        conn.execute(f"DELETE FROM participants WHERE p_id={id};")
         return Response("Deleted", status=200)
     #return render_template("participants/delete.html", title="Delete Participant", loggedin=current_user.is_authenticated, email=current_user.email, data=participants_res)
     except psycopg2.OperationalError as e:

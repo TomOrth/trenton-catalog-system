@@ -17,7 +17,8 @@
                             <source src={{ data['audio_file_path'] }}>
                         </audio>
                         <br>
-                        <a href="/transcripts/download/text/{{ data['text_file_path'] }}">Download PDF</a>
+                        <a target="_blank" href="/transcripts/download/text/{{ data['text_file_path'] }}">Download PDF</a>
+                        <a target="_blank" href={{ data['audio_file_path'] }}>Download Audio File</a>
                     </div>
                 </div>
             </div>

@@ -59,8 +59,8 @@ def new():
 def delete():
     id = request.form["id"]
     try:
+        conn.execute(f"DELETE FROM mentions WHERE location_id={id};")
         conn.execute(f"DELETE FROM locations WHERE location_id={id};")
-
         return Response("Deleted", status=200)
     except psycopg2.OperationalError as e:
         return Response(f"Error: {e}", status=404)
