@@ -104,4 +104,4 @@ class PostgresConnection(Connection):
         Rollback transaction
         """
         self.conn.rollback()
-        
+        self.is_connected = False
