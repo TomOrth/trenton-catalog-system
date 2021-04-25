@@ -51,6 +51,8 @@ def new():
             _, res = conn.execute_and_return(f"SELECT * FROM keywords WHERE keyword=\'{form.keyword.data}\';")
             if len(res) < 1:
                 conn.execute(f"INSERT INTO keywords(keyword) VALUES (\'{form.keyword.data}\');")
+            else:
+                flash("Keyword already exists")
             return redirect(url_for("keywords.all"))
         except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
             flash(f"Error: {e}")
