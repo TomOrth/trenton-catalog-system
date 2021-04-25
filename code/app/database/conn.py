@@ -44,6 +44,12 @@ class Connection(object):
         """
         if not self.is_connected:
             self.connect()
+    
+    def rollback(self):
+        """
+        Rollback a failed transaction
+        """
+        pass
 
 class PostgresConnection(Connection):
     """
@@ -92,4 +98,10 @@ class PostgresConnection(Connection):
         content = cur.fetchall()
         columns = [desc[0] for desc in cur.description]
         return columns, content
+    
+    def rollback(self):
+        """
+        Rollback transaction
+        """
+        self.conn.rollback()
         

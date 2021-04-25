@@ -10,6 +10,7 @@ from app.locations.forms import SearchForm, LocationForm
 from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash, Response, send_from_directory
 from flask_login import login_required, current_user
 from app.decorators import librarian
+import psycopg2
 
 locations = Blueprint("locations", __name__, url_prefix="/locations")
 
@@ -46,10 +47,15 @@ def all():
 def new():
     form = LocationForm(request.form)
     if request.method == "POST" and form.validate_on_submit():
-        _, res = conn.execute_and_return(f"SELECT * FROM locations WHERE street_name=\'{form.location.data}\';")
-        if len(res) < 1:
-            conn.execute(f"INSERT INTO locations(street_name) VALUES (\'{form.location.data}\');")
-        return redirect(url_for("locations.all"))
+        try:
+            _, res = conn.execute_and_return(f"SELECT * FROM locations WHERE street_name=\'{form.location.data}\';")
+            if len(res) < 1:
+                conn.execute(f"INSERT INTO locations(street_name) VALUES (\'{form.location.data}\');")
+            return redirect(url_for("locations.all"))
+        except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
+            flash(f"Error: {e}")
+            conn.rollback()
+            return redirect(url_for("locations.new"))
     return render_template("locations/new.html", title="New Locations", lflag=current_user.lflag, form=form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Delete a location
@@ -63,4 +69,5 @@ def delete():
         conn.execute(f"DELETE FROM locations WHERE location_id={id};")
         return Response("Deleted", status=200)
     except psycopg2.OperationalError as e:
+        flash(f"Error: {e}")
         return Response(f"Error: {e}", status=404)

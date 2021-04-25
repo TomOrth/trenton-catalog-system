@@ -10,6 +10,7 @@ from app.keywords.forms import SearchForm, KeywordForm
 from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash, Response, send_from_directory
 from flask_login import login_required, current_user
 from app.decorators import librarian
+import psycopg2
 
 keywords = Blueprint("keywords", __name__, url_prefix="/keywords")
 
@@ -46,10 +47,15 @@ def all():
 def new():
     form = KeywordForm(request.form)
     if request.method == "POST" and form.validate_on_submit():
-        _, res = conn.execute_and_return(f"SELECT * FROM keywords WHERE keyword=\'{form.keyword.data}\';")
-        if len(res) < 1:
-            conn.execute(f"INSERT INTO keywords(keyword) VALUES (\'{form.keyword.data}\');")
-        return redirect(url_for("keywords.all"))
+        try:
+            _, res = conn.execute_and_return(f"SELECT * FROM keywords WHERE keyword=\'{form.keyword.data}\';")
+            if len(res) < 1:
+                conn.execute(f"INSERT INTO keywords(keyword) VALUES (\'{form.keyword.data}\');")
+            return redirect(url_for("keywords.all"))
+        except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
+            flash(f"Error: {e}")
+            conn.rollback()
+            return redirect(url_for("keywords.new"))
     return render_template("keywords/new.html", title="New Keywords", lflag=current_user.lflag,  form=form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 # Delete a keyword
@@ -63,4 +69,5 @@ def delete():
         conn.execute(f"DELETE FROM keywords WHERE k_id={id};")
         return Response("Deleted", status=200)
     except psycopg2.OperationalError as e:
+        flash(f"Error: {e}")
         return Response(f"Error: {e}", status=404)

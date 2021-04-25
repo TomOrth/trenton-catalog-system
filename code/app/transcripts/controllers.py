@@ -103,18 +103,22 @@ def new():
     form.keywords.choices = [(keyword.k_id, keyword.keyword) for keyword in Keyword.run_and_return_many(conn, f"SELECT * FROM keywords;")]
     form.locations.choices = [(location.location_id, location.street_name) for location in Location.run_and_return_many(conn, f"SELECT * FROM locations;")]
     if request.method == "POST" and form.validate_on_submit():
-        current_app.logger.info("fdafda")
         filename = secure_filename(form.text_file.data.filename)
-        form.text_file.data.save(os.path.join(current_app.config["UPLOAD_FOLDER"], filename))
-        _, id_res = conn.execute_and_return(f"INSERT INTO transcripts(title, summary, text_file_path, audio_file_path, text_content) VALUES (\'{form.title.data}\', \'{form.summary.data}\', \'{filename}\', \'{form.audio_path.data}\', \'{form.text_content.data}\') RETURNING transcript_id;")
-        id = id_res[0][0]
-        for pid in form.participants.data:
-            conn.execute(f"INSERT INTO participates VALUES ({pid}, {id});")
-        for kid in form.keywords.data:
-            conn.execute(f"INSERT INTO describes VALUES ({kid}, {id});")
-        for lid in form.locations.data:
-            conn.execute(f"INSERT INTO mentions VALUES ({lid}, {id});")
-        return redirect(url_for("transcripts.search"))
+        try:
+            _, id_res = conn.execute_and_return(f"INSERT INTO transcripts(title, summary, text_file_path, audio_file_path, text_content) VALUES (\'{form.title.data}\', \'{form.summary.data}\', \'{filename}\', \'{form.audio_path.data}\', \'{form.text_content.data}\') RETURNING transcript_id;")
+            form.text_file.data.save(os.path.join(current_app.config["UPLOAD_FOLDER"], filename))
+            id = id_res[0][0]
+            for pid in form.participants.data:
+                conn.execute(f"INSERT INTO participates VALUES ({pid}, {id});")
+            for kid in form.keywords.data:
+                conn.execute(f"INSERT INTO describes VALUES ({kid}, {id});")
+            for lid in form.locations.data:
+                conn.execute(f"INSERT INTO mentions VALUES ({lid}, {id});")
+            return redirect(url_for("transcripts.search"))
+        except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
+            flash(f"Error: {e}")
+            conn.rollback()
+            return redirect(url_for("transcripts.new"))
     return render_template("transcripts/new.html", title="New Transcript", lflag=current_user.lflag, form=form, loggedin=current_user.is_authenticated, email=current_user.email)
 
 @transcripts.route("/update", methods=["GET", "POST"])
@@ -131,8 +135,13 @@ def update():
             filename = secure_filename(form.text_file.data.filename)
             form.text_file.data.save(os.path.join(current_app.config["UPLOAD_FOLDER"], filename))
         text_content = form.text_content.data.replace("'", "")
-        conn.execute(f"UPDATE transcripts SET title=\'{form.title.data}\', summary=\'{form.summary.data}\', audio_file_path=\'{form.audio_path.data}\', text_file_path=\'{filename}\', text_content=\'{text_content}\' WHERE transcript_id={id};")
-        return redirect(url_for("transcripts.search"))
+        try:
+            conn.execute(f"UPDATE transcripts SET title=\'{form.title.data}\', summary=\'{form.summary.data}\', audio_file_path=\'{form.audio_path.data}\', text_file_path=\'{filename}\', text_content=\'{text_content}\' WHERE transcript_id={id};")
+            return redirect(url_for("transcripts.search"))
+        except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
+            flash(f"Error: {e}")
+            conn.rollback()
+            return redirect(url_for("transcripts.new"))
     form.title.data = transcript.title
     form.summary.data = transcript.summary
     form.audio_path.data = transcript.audio_file_path

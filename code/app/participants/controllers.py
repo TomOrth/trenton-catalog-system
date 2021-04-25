@@ -48,10 +48,15 @@ def new():
     new_form = NewForm(request.form)
 
     if request.method == "POST" and new_form.validate_on_submit():
-        _, res = conn.execute_and_return(f"SELECT * FROM participants WHERE name=\'{new_form.name.data}\';")
-        if len(res) < 1:
-            conn.execute(f"INSERT INTO participants(name) VALUES (\'{new_form.name.data}\');")
-        return redirect(url_for("participants.all"))
+        try:
+            _, res = conn.execute_and_return(f"SELECT * FROM participants WHERE name=\'{new_form.name.data}\';")
+            if len(res) < 1:
+                conn.execute(f"INSERT INTO participants(name) VALUES (\'{new_form.name.data}\');")
+            return redirect(url_for("participants.all"))
+        except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
+            flash(f"Error: {e}")
+            conn.rollback()
+            return redirect(url_for("participants.new"))
 
     return render_template("participants/new.html", title="New Participant", lflag=current_user.lflag, form=new_form, loggedin=current_user.is_authenticated, email=current_user.email)
 
