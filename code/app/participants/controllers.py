@@ -52,6 +52,9 @@ def new():
             _, res = conn.execute_and_return(f"SELECT * FROM participants WHERE name=\'{new_form.name.data}\';")
             if len(res) < 1:
                 conn.execute(f"INSERT INTO participants(name) VALUES (\'{new_form.name.data}\');")
+            else:
+                flash("Participant already exists")
+                return redirect(url_for("participants.new"))
             return redirect(url_for("participants.all"))
         except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
             flash(f"Error: {e}")

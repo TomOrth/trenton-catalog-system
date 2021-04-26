@@ -53,6 +53,7 @@ def new():
                 conn.execute(f"INSERT INTO keywords(keyword) VALUES (\'{form.keyword.data}\');")
             else:
                 flash("Keyword already exists")
+                return redirect(url_for("keywords.new"))
             return redirect(url_for("keywords.all"))
         except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
             flash(f"Error: {e}")

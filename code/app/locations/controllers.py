@@ -51,6 +51,9 @@ def new():
             _, res = conn.execute_and_return(f"SELECT * FROM locations WHERE street_name=\'{form.location.data}\';")
             if len(res) < 1:
                 conn.execute(f"INSERT INTO locations(street_name) VALUES (\'{form.location.data}\');")
+            else:
+                flash("Location already exists")
+                return redirect(url_for("locations.new"))
             return redirect(url_for("locations.all"))
         except (psycopg2.OperationalError, psycopg2.errors.UniqueViolation) as e:
             flash(f"Error: {e}")
