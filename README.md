@@ -13,7 +13,12 @@ The database used will be postgres. The back-end server will be made with Python
 
 # Installation and Setup
 
-We will put steps to setup the project as it is developed
+Two main technologies need:
+
+* Postgres - https://www.postgresql.org/docs/9.3/tutorial-install.html
+* Python 3.8 - https://realpython.com/installing-python/
+
+Please see other sections of this README for further setup
 
 # Database Design
 
