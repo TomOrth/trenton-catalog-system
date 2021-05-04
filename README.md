@@ -1,11 +1,10 @@
 # CSC 315 Project Group 1 Transcript Catalog
 
-This repository contains documents, database design, and code related to Group 1's implementation to house the transcripts from the trentoniana. As we progress
-more in the stages, more of these readme sections will be filled out.
+This repository contains documents, database design, and code related to Group 1's implementation to house the transcripts from the trentoniana. Documents are listed on this repository's wiki page under the wiki tab.
 
 In addition to our README, please visit our wiki for more information.
 
-Our group proposal is (here)[https://github.com/TCNJ-degoodj/stage-v-group-1/blob/main/docs/Proposal_stage3.pdf]
+Our group proposal is [here](https://github.com/TomOrth/trenton-catalog-system/blob/main/docs/Proposal_stage3.pdf)
 
 # Technology
 
@@ -22,9 +21,9 @@ Please see other sections of this README for further setup
 
 # Database Design
 
-Please see [this document](https://github.com/TCNJ-degoodj/stage-v-group-1/blob/main/docs/Database%20Model%20Updated%20-%20Stage%20IV.pdf) for our database design that has an EER diagram and relational schema.
+Please see [this document](https://github.com/TomOrth/trenton-catalog-system/blob/main/docs/Database%20Model%20Updated%20-%20Stage%20IV.pdf) for our database design that has an EER diagram and relational schema.
 
-Please see [this document](https://github.com/TCNJ-degoodj/stage-v-group-1/blob/main/docs/Stage%20Va%20-%20Updated%20Design%20Doc.pdf) to see our design (Normalization, Views and a set of queries for our transactions).
+Please see [this document](https://github.com/TomOrth/trenton-catalog-system/blob/main/docs/Stage%20Va%20-%20Updated%20Design%20Doc.pdf) to see our design (Normalization, Views and a set of queries for our transactions).
 
 # Repo structure
 
